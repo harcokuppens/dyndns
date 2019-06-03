@@ -85,7 +85,7 @@ function format_mac($mac, $format='linux'){
     }
 }
 
-function output_result($result_msg,$error_msg) {
+function output_result($result_msg,$error_msg="") {
     global $via_form,$allow_to_print_all_data,$data_cmd;
     if ( $via_form ) {
        echo "<html><br/><br/><br/><center>";         
