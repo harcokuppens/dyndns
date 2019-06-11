@@ -1,8 +1,8 @@
 #!/bin/bash
 
 network_prefix=".*"
-lan_prefix="192.168"
-dyndns_url="http://www.cs.ru.nl/H.Kuppens/dyndns/"
+lan_prefix="131.174"
+dyndns_url="http://www.cs.ru.nl/lab/dyndns/"
 
 get_mac_for_interface() 
 {
