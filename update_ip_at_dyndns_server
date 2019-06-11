@@ -6,12 +6,15 @@ dyndns_url="http://www.cs.ru.nl/lab/dyndns/"
 
 get_mac_for_interface() 
 {
-     ifconfig $1 | grep HWaddr | sed 's/.*HWaddr //'; 
+#     ifconfig $1 | grep HWaddr | sed 's/.*HWaddr //'; 
+      ip -4 link show eth0 | grep -oP '(?<=link/ether\s)[:0123456789abcdef]*'
 }
 
 get_ip_for_interface() 
 { 
-     ifconfig $1 | grep 'inet addr:' | sed 's/.*inet addr://'| sed 's/ Bcast:.*//'; 
+     #ifconfig $1 | grep 'inet addr:' | sed 's/.*inet addr://'| sed 's/ Bcast:.*//'; 
+     ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+
 }
 
 
